@@ -87,22 +87,112 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-var month = [0];
-var amount = [1];
+// Variables
+var numberOfMonths = finances.length;
+var netTotal = 0;
+var totalChanges = 0;
+var averageChange = 0;
 
-//The total number of months included in the dataset.
+for (var i = 0; i < finances.length; i++) {
+  var record = finances[i];
+  var date = record[0];
+  var amount = record[1];
+}
+if (i > 0) {
+  var previousRecord = finances[i - 1];
+  var previousAmount = previousRecord[1];
+  var change = amount - previousAmount;
+  totalChanges += change;
+}
+
+var greatestIncreaseInProfits = { date: " ", amount: 0 };
+var greatestDecreaseInLosses = { date: " ", amount: 0 };
+
+// Operations
+
+// Calculate the total amount of Profit/Losses
+for (var i = 0; i < finances.length; i++) {
+  netTotal += finances[i][1];
+}
+
+// Calculate the changes month to month
+for (var i = 1; i < finances.length; i++) {
+  totalChanges += finances[i][1] - finances[i - 1][1];
+}
+
+// Calculate average change
+averageChange = totalChanges / numberOfMonths;
+
+// Calculate greatest increase in profits (date and amount)
+if (change > greatestIncreaseInProfits.amount) {
+  greatestIncreaseInProfits.date = date;
+  greatestIncreaseInProfits.amount = amount;
+}
+// Calculations
+
+//Heading and underline
+
+console.log("Financial Analysis");
+console.log("------------------------");
+
+//1. The total number of months included in the dataset.
 console.log("Total Months: " + finances.length);
 
-// The net total amount of Profit/Losses over the entire period.
-var total = 0;
-// for (var[1] i = 0; i < finances.length; i++) {
+// 2. The net total amount of Profit/Losses over the entire period.
+console.log(
+  "Total: " +
+    new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency: "USD",
+    }).format(netTotal)
+);
 
+// 3. The average of the changes in Profit/Losses over the entire period.
+console.log(
+  "Average Change: " +
+    new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency: "USD",
+    }).format(averageChange)
+);
+
+// 4. The greatest increase in profits (date and amount) over the entire period.
+// console.log(
+//   "Greatest Increase in Profits: " +
+//     new Intl.NumberFormat("en-GB", {
+//       style: "currency",
+//       currency: "USD",
+//     }).format(greatestIncreaseInProfits.date)
+// );
+console.log(
+  "Greatest increase in profits: " +
+    greatestIncreaseInProfits.date +
+    " ($" +
+    greatestIncreaseInProfits.amount +
+    ")"
+);
+
+// 5. The greatest decrease in losses (date and amount) over the entire period.
+console.log(
+  "Greatest decrease in losses: " +
+    greatestDecreaseInLosses.date +
+    " ($" +
+    greatestDecreaseInLosses.amount +
+    ")"
+);
+
+//The total number of months included in the dataset.
+// console.log("Total Months: " + finances.length);
+
+// The net total amount of Profit/Losses over the entire period.
+
+// var [1] ; i = 0; i < finances.length; i++;  {
+//   console.log("Total: " + finances.length);
 // }
 //sum = finances.reduce((0,))
 
 // var total = 0
 // for i in finances
-total = total + finances[i][1];
-function newFunction() {
-  console.log(finances.length);
-}
+// total = total + finances[i][1];
+// function newFunction() {
+//   console.log(finances.length)
