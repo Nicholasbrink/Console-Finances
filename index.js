@@ -136,7 +136,7 @@ console.log("Total Months: " + finances.length);
 console.log("Total: $" + netTotal);
 
 // 3. The average of the changes in Profit/Losses over the entire period.
-console.log("Average Change: $" + averageChange);
+console.log("Average Change: $" + averageChange.toFixed(2));
 
 // 4. The greatest increase in profits (date and amount) over the entire period.
 
