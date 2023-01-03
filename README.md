@@ -40,6 +40,8 @@ When you open your code in the browser your resulting analysis should look simil
 
 Your final code should print the analysis to the console.
 
+https://github.com/Nicholasbrink/Console-Finances/issues/1#issue-1518057092
+
 **Hints:**
 
 * You will need to do some research on your own for this project!
