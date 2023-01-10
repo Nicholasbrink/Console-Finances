@@ -92,6 +92,7 @@ var numberOfMonths = finances.length;
 var netTotal = 0;
 var totalChanges = 0;
 var averageChange = 0;
+var profitChangeArray = [];
 
 // Operations
 
@@ -108,24 +109,27 @@ for (var i = 1; i < finances.length; i++) {
 // Calculate average change
 averageChange = totalChanges / numberOfMonths;
 
-// Change of profits
-var Profits = [];
-for (var i = 0; i < finances.length; i++) {
-  Profits.push(finances[i][1]);
+// Calculate Change of profits for each month and push into a new array called profitChange
+for (var i = 1; i < finances.length; i++) {
+  var profitChange = finances[i][1] - finances[i - 1][1];
+  var month = finances[i][0];
+  profitChangeArray.push({ month: month, profitChange: profitChange });
 }
 
+//Sort Array in ascending order using the sort method
+var sortedArray = profitChangeArray.sort(function (a, b) {
+  return a.profitChange - b.profitChange;
+});
+
 // Calculate greatest increase in profits (date and amount)
-var indexGreatestIncreaseInProfits = Profits.indexOf(Math.max(...Profits));
-var greatestIncreaseInProfits = finances[indexGreatestIncreaseInProfits];
+var greatestIncreaseInProfits = sortedArray[sortedArray.length - 1];
 
 // Calculate greatest decrease in losses (date and amount)
-var indexGreatestDecreaseInLosses = Profits.indexOf(Math.min(...Profits));
-var greatestDecreaseInLosses = finances[indexGreatestDecreaseInLosses];
+var greatestDecreaseInLosses = sortedArray[0];
 
 // Calculations
 
 //Heading and underline
-
 console.log("Financial Analysis");
 console.log("------------------------");
 
@@ -139,21 +143,19 @@ console.log("Total: $" + netTotal);
 console.log("Average Change: $" + averageChange.toFixed(2));
 
 // 4. The greatest increase in profits (date and amount) over the entire period.
-
 console.log(
   "Greatest Increase In Profits: " +
-    greatestIncreaseInProfits[0] +
+    greatestIncreaseInProfits.month +
     " ($" +
-    greatestIncreaseInProfits[1] +
+    greatestIncreaseInProfits.profitChange +
     ")"
 );
 
 // 5. The greatest decrease in losses (date and amount) over the entire period.
-
 console.log(
   "Greatest Decrease In Losses: " +
-    greatestDecreaseInLosses[0] +
+    greatestDecreaseInLosses.month +
     " ($" +
-    greatestDecreaseInLosses[1] +
+    greatestDecreaseInLosses.profitChange +
     ")"
 );
