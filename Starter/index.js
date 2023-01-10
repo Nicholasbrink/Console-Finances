@@ -131,17 +131,18 @@ var greatestDecreaseInLosses = sortedArray[0];
 
 //Heading and underline
 console.log("Financial Analysis");
+("\n");
 console.log("------------------------");
-
+("\n");
 //1. The total number of months included in the dataset.
 console.log("Total Months: " + finances.length);
-
+("\n");
 // 2. The net total amount of Profit/Losses over the entire period.
 console.log("Total: $" + netTotal);
-
+("\n");
 // 3. The average of the changes in Profit/Losses over the entire period.
 console.log("Average Change: $" + averageChange.toFixed(2));
-
+("\n");
 // 4. The greatest increase in profits (date and amount) over the entire period.
 console.log(
   "Greatest Increase In Profits: " +
@@ -150,7 +151,7 @@ console.log(
     greatestIncreaseInProfits.profitChange +
     ")"
 );
-
+("\n");
 // 5. The greatest decrease in losses (date and amount) over the entire period.
 console.log(
   "Greatest Decrease In Losses: " +

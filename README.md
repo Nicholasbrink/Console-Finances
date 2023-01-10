@@ -15,7 +15,7 @@ This challenge I have created Javascript code for analyzing the financial record
 
 ## Website screenshots
 
-![Screenshot_20230103_233024](https://user-images.githubusercontent.com/117687727/210458421-d55a7399-0eb5-40e8-b2e1-a05a57e49e3a.png)
+![Screenshot_20230110_105815](https://user-images.githubusercontent.com/117687727/211537904-488a198f-8941-431c-8d00-df77fcd2da5c.png)
 
 ## Website Link
 
