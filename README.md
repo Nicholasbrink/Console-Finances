@@ -1,5 +1,14 @@
 # Unit 4 Challenge: Console Finances
 
+## Table of Contents
+
+1. Description
+2. Website screenshots
+3. Website Link
+4. Credits
+5. Contributing
+6. License
+
 ## Description
 
 This challenge I have created Javascript code for analyzing the financial records of a company.
@@ -15,6 +24,7 @@ https://nicholasbrink.github.io/Console-Finances/
 ## Credits
 
 Pod 4 EdX Front End Developer Bootcamp Group
+Tutor: Natasha Mann
 
 ## Contributing
 
