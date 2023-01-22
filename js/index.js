@@ -127,7 +127,7 @@ var greatestIncreaseInProfits = sortedArray[sortedArray.length - 1];
 // Calculate greatest decrease in losses (date and amount)
 var greatestDecreaseInLosses = sortedArray[0];
 
-// Calculations
+// Calculations to Print to the console
 
 //Heading and underline
 console.log("Financial Analysis");
